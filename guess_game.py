@@ -1,5 +1,7 @@
 import random
 
+from Score import add_score
+
 
 def guess_game(choose_game_difficulty):
     play(choose_game_difficulty)
@@ -24,6 +26,7 @@ def play(choose_game_difficulty):
     result = compare_result(secret_number, user_secret_number)
     if result:
         print('You Won!')
+        add_score(choose_game_difficulty)
     else:
       print('You Lost!')
     print(f'your choice is {user_secret_number} and the pc choice is {secret_number}')
