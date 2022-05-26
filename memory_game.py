@@ -1,6 +1,8 @@
 import random
 import time
 
+from Score import add_score
+
 
 def memory_game(choose_game_difficulty):
     play(choose_game_difficulty)
@@ -35,6 +37,8 @@ def play(choose_game_difficulty):
     result = is_list_equal(user_numbers_list, random_numbers_list)
     if result:
         print('you won!')
+        add_score(choose_game_difficulty)
+
     else:
         print('you lost!')
     print(f'your list is {random_numbers_list} and the user list is {user_numbers_list}')

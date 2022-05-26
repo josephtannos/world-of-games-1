@@ -3,6 +3,8 @@ import datetime
 
 from forex_python.converter import CurrencyRates
 
+from Score import add_score
+
 
 def currency_roulette_game(choose_game_difficulty):
      play(choose_game_difficulty)
@@ -28,6 +30,7 @@ def play(choose_game_difficulty):
     guess = get_guess_from_user(random_amount)
     if guess <= max_interval and guess >= min_interval:
         print('You Won')
+        add_score(choose_game_difficulty)
     else:
         print('You lost')
     print(f'your guess is {guess}, min interval is {min_interval}, max interval is {max_interval}')
